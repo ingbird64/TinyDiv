@@ -8,3 +8,5 @@ Outputs
 * 1PPS-Output at PB2 (Pin7)
 * 10kHz at PB0 (Pin5)
 * 10Hz at PB1 (Pin6)
+
+![schematic](schematic.png)
