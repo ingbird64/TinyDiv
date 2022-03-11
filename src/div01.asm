@@ -59,8 +59,8 @@ RESET:                          ; hier startet der Code nach einem Reset
     out     SPH,temp             ; SPH, oberes Byte des Stackpointers wird $04
     ldi     temp,low(RAMEND)     ; $5F wird in Register 16 geladen
     out     SPL,temp             ; SPL, unteres Byte des Stackpointers wird $5F
-    ldi     temp,0b00000111
-    out     DDRB,temp           ; setzt PB0 bis PB2 von PORTB als Ausgang
+    ldi     temp,0b00110111
+    out     DDRB,temp           ; setzt PB0,1,2,4 und 5 von PORTB als Ausgang
     clr     prep
 
     ldi     count_0, 10
@@ -76,8 +76,8 @@ RESET:                          ; hier startet der Code nach einem Reset
 ;******************************************************************************
 
 LOOP:
+    ori     prep,0xf0
     out     PORTB,prep          ; PORTB wird gesetzt
-    nop
     ldi     delay_0, 2
     rcall   SUB_DELAY
     dec     count_0             ; 10KHz Zähler
