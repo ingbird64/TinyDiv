@@ -20,6 +20,7 @@
 ;                              o|3      6|---->  output clock 10Hz
 ;            Ground (Vss)  =====|4      5|---->  output clock 10kHz
 ;                                --------
+;                                ATtiny85
 ;
 ; Version:
 ;
