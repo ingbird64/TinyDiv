@@ -16,9 +16,9 @@
 ; Diagram:
 ;                                ---__---
 ;                              o|1      8|+++++  5V (Vdd)
-;             input clock  ---->|2      7|---->  output clock 1Hz
-;                              o|3      6|---->  output clock 10Hz
-;            Ground (Vss)  =====|4      5|---->  output clock 10kHz
+;         10 MHz clock in  ---->|2      7|---->  1 Hz out
+;                              o|3      6|---->  10 Hz out
+;            Ground (Vss)  =====|4      5|---->  10 kHz out
 ;                                --------
 ;                                ATtiny85
 ;
