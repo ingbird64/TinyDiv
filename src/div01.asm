@@ -34,11 +34,11 @@
 ;* Definitionen
 ;******************************************************************************
 
+.INCLUDE    "tn85def.inc"              ; Labels and identifiers for tiny85
+
 .def temp       = r16       ; temp ist symbolischer Name für Register 16
                             ; wird als temporäre Variable verwendet
-.def delay_0    = r17       ; delay_0 ist symbolischer Name für Register 17 
-;.def delay_1    = r18       ; delay_1 ist symbolischer Name für Register 18
-;.def delay_2    = r19       ; delay_2 ist symbolischer Name für Register 19
+.def delay_0    = r17       ; delay_0 ist symbolischer Name für Register 17
 
 .def count_0    = r20       ; 10000 Stelle eines BDC-Zählers
 .def count_1    = r21       ; 1000 Stelle
@@ -49,15 +49,15 @@
 
 ;******************************************************************************
 ;*  Programm Start nach Reset
-;* 
+;*
 ;*  der Stackpointer wird initialisiert
 ;*  Register werden gesetzt
 ;******************************************************************************
 
 RESET:                          ; hier startet der Code nach einem Reset
-    ldi     temp,high(RAMEND)    ; $04 wird in Register 16 geladen 
-    out     SPH,temp             ; SPH, oberes Byte des Stackpointers wird $04 
-    ldi     temp,low(RAMEND)     ; $5F wird in Register 16 geladen 
+    ldi     temp,high(RAMEND)    ; $04 wird in Register 16 geladen
+    out     SPH,temp             ; SPH, oberes Byte des Stackpointers wird $04
+    ldi     temp,low(RAMEND)     ; $5F wird in Register 16 geladen
     out     SPL,temp             ; SPL, unteres Byte des Stackpointers wird $5F
     ldi     temp,0b00000111
     out     DDRB,temp           ; setzt PB0 bis PB2 von PORTB als Ausgang
@@ -71,7 +71,7 @@ RESET:                          ; hier startet der Code nach einem Reset
 
 ;******************************************************************************
 ;*  Hauptprogramm
-;* 
+;*
 ;*  eine endlose Schleife
 ;******************************************************************************
 
@@ -152,12 +152,12 @@ label9:
     nop
     nop
     rjmp    LOOP
-    
+
 ;*******************************************************************************
 ;* Unterprogramm SUB_DELAY
-;* 
+;*
 ;* erzeugt eine Verzögerung von 3*n + 7 Takten
-;* 
+;*
 ;*******************************************************************************
 
 SUB_DELAY:
