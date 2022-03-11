@@ -1,13 +1,30 @@
+;******************************************************************************
 ;
-; div01.asm
+; Title:
 ;
-; Created: 06.07.2020 18:12:57
-; Author : sv
+;      div01.asm
 ;
-; 10MHz in CLKI (Pin2), 
-; PB0 (Pin5): 10kHz,
-; PB1 (Pin6): 10Hz,
-; PB2 (Pin7): 1Hz out
+;
+;
+; Function:
+;
+;   This program implements a digital frequency divider: the external
+;   input clock is divided by a factor of 1 thousand (1e3), 1 million (1e6) and 10 million (1e7).
+;   For example, if the input clock is 10 MHz then the output clocks will be 10 kHz, 10Hz and 1 Hz.
+;
+;
+; Diagram:
+;                                ---__---
+;                              o|1      8|+++++  5V (Vdd)
+;             input clock  ---->|2      7|---->  output clock 1Hz
+;                              o|3      6|---->  output clock 10Hz
+;            Ground (Vss)  =====|4      5|---->  output clock 10kHz
+;                                --------
+;
+; Version:
+;
+;   Created: 06.07.2020 18:12:57
+;   Author : sv
 ;
 ;******************************************************************************
 
